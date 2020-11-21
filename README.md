@@ -1,5 +1,6 @@
 # Interviewer
 
-![Image] (~/Linux files/Pictures/ink.png)
+! [Image]
+(~/Linux files/Pictures/ink.png)
 
 
