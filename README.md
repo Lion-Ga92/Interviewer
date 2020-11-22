@@ -1,6 +1,5 @@
 # Interviewer
 
-![Image]
-(~/Pictures/ink.png)
+! [Image] (~/Pictures/ink.png)
 
 
