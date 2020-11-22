@@ -1,7 +1,7 @@
 # Interviewer
 
 ! [Image]
-(Pictures/ink.png)
+(https://www.dropbox.com/home?preview=ink.png)
 
 
 
