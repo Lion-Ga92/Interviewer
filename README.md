@@ -12,6 +12,16 @@ I tried using recursivism  and the random method of python to keep the randomnes
 
 ! [This is the code](https://www.dropbox.com/s/13o2ngnt2um4gx0/pic2.png?dl=0)
 
+## SOLVED!!!! LADIES AND GENTS!!! I FINALLY FIGURED IT OUT. 
+Finally after taking stabs at this programs for hours at time since november, i finally figured out how to do it. And cut down about 50-60 lines of code. It turns out i was trying to reinvent the wheel, or in this case.
+##### the Random.choice() method! 
+which is slighty annoying. 
+I tried everything from calling the remove() method of python in a recursive call of the function i was working on to trying to control the number of times it iterated in the function callback. 
+
+Eventually i realized that  there WAS a method that could do the job i wanted with less code. 
+
+
+
 
 
 
