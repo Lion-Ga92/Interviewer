@@ -1,11 +1,9 @@
 import sys
-
 import random
-
 import time
 
 
-
+#THE CODE BELOW IS JUST FLUFF AND PLOT SETTING. 
 def intro_to_program():
 
     print("Welcome to the Job interviewer simulator")
@@ -29,6 +27,8 @@ def scenario_picker():
     time.sleep(1)
     print("You run the program again")
 
+    # I used a simple randrange method to select a number and control flow to have three different scenes for the interviewer
+    
     scene_pick = random.randrange(1,4)
     time.sleep(1)
 
@@ -60,7 +60,8 @@ def scenario_picker():
 
         Interview_quests_intro()
 
-
+# THIS FUNCTION IS THE INTRO TO THE INTERVIEW, BUT IT MAINLY SERVES THE PURPOSES OF LEADING TO THE MAIN ALGORYTHM THAT HOUSES THE INTERVIEW 
+# QUESTIONS SPECIALLY SINCE THAT FUNCTION WORKS RECURSIVELY. 
 def Interview_quests_intro():
     time.sleep(4)
     print("Hello and welcome to our company!")
@@ -74,10 +75,6 @@ def Interview_quests_intro():
     print("=======RESPOND============")
     time.sleep(4)
     print("====================")
-    time.sleep(2)
-    print("====================")
-    time.sleep(4)
-    print("====================")
     time.sleep(1)
     print("====================")
     time.sleep(1)
@@ -86,95 +83,42 @@ def Interview_quests_intro():
     print("====================")
     print("After this point i will be asking you a few questions, respond to the best of your ability")
     input("press enter to continue ")
-    full_questions()
 
+    full_questions(9)
 
+a = "Tell me about yourself"
+b = "Why do you want to work for us?"
+c = "What is your greatest weakness?"
+d = "What assets would you bring to the company?"
+e = "What is your highest level of education?"
+f = "Have you worked at another job previous that is related to this one?"
+g = "Can we contact the references that you provided?"
+h = "Did you leave your last job on good terms?"
 
-def full_questions(z = 8):
+#THE MEAT AND MY HEADACHE INDUCING TROUBLE FOR THE LAST 7 MONTHS. IT IS A FUNCTION THAT WORKS RECURSIVELY. 
+# ORIGINALLY IT WAS A RATHER LARGE NUMBER OF LINES OF CODES THAT I DID NOT REALIZE COULD BE DONE WITH JUST A 
+# METHOD OF THE RANDOM MODULE.  
 
-    if z > 0:
-        a = "Tell me about yourself"
-        b = "Why do you want to work for us?"
-        c = "What is your greatest weakness?"
-        d = "What assets would you bring to the company?"
-        e = "What is your highest level of education?"
-        f = "Have you worked at another job previous that is related to this one?"
-        g = "Can we contact the references that you provided?"
-        h = "Did you leave your last job on good terms?"
-        
-        #allowed_quests = [a, b, c, d, e, f, g, h]
-        allow_lista = [1, 2, 3, 4, 5, 6, 7, 8]
-        pick_lett = random.randrange(1, 9)
+quest_list = [a, b, c, d, e, f, g, h]
 
-        if pick_lett == 1 and (pick_lett in allow_lista):
-            print("Tell me about yourself")
-            #allowed_quests.remove("Tell me about yourself")
-            allow_lista.pop(0)
-            input("Press entertttttt to get 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-
-        elif pick_lett == 2 and (pick_lett in allow_lista):
-            #and (pick_lett in allow_range):
-            print("Why do you want to work for us?")
-            #llowed_quests.remove("Why do you want to work for us?")
-            allow_lista.pop(1)
-            input("Press enterr to get 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-        
-        elif pick_lett == 3 and (pick_lett in allow_lista):
-            print("What is your greatest weakness?")
-            #allowed_quests.remove("What is your greatest weakness?")
-            allow_lista.pop(2)
-            input("Press enterraaaa to get 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-
-        elif pick_lett == 4 and (pick_lett in allow_lista):
-            print("What assets would you bring to the company?")
-            #allowed_quests.remove("What assets would you bring to the company?")
-            allow_lista.pop(3)
-            input("Press enterrrrrrrrrrrrr to get 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-
-        elif pick_lett == 5 and (pick_lett in allow_lista):
-            print("What is your highest level of education?")
-            #allowed_quests.remove("What is your highest level of education?")
-            allow_lista.pop(4)
-            input("Press ente to get 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-
-        elif pick_lett == 6 and (pick_lett in allow_lista):
-            print("Have you worked at another job previous that is related to this one?")
-            #allowed_quests.remove("Have you worked at another job previous that is related to this one?")
-            allow_lista.pop(5)
-            input("Press ente to gt 60 secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-
-        elif pick_lett == 7 and (pick_lett in allow_lista):
-            print("Can we contact the references that you provided?")
-            #allowed_quests.remove("Can we contact the references that you provided?")
-            allow_lista.pop(6)
-            input("Press ente to get 60secs. to respond. Press enter once told to move")
-            time.sleep(5)
-            full_questions(z-1)
-        
-        elif pick_lett == 8 and (pick_lett in allow_lista):
-            print("Did you leave your last job on good terms?")
-            #allowed_quests.remove("Did you leave your last job on good terms?")
-            allow_lista.pop(7)
-            input("Press ente to get 60 secs. to respond")
-            time.sleep(5)
-            full_questions(z-1)
+def full_questions(x):
+    if x > 1:
+        global quest_list
+        choice_1 = random.choice(quest_list)
+        print(choice_1)
+        quest_list.remove(choice_1)
+        input("NOTE: Press enter when you are ready to move")
+        print("++++++++++++++++++")
+        print("++++++++++++++++++")
+        print("                  ")
+        print("                  ")
+        full_questions(x-1)
+    
     else:
         print("Thank you for coming to our interview. We will contact you if we have follow up")
         print("questions. Do you have any questions for us?")
-        input("Press ente to get 60 secs. to respond. Press enter once told to move")
-        time.sleep(5)
+        time.sleep(3)
         exit()
+
 
 intro_to_program()

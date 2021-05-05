@@ -1,43 +1,42 @@
 import random
 import sys
 
+a = "hello"
+b = "bye"
+c = "ciao"
+allow_1 = [a, b, c]
+def Algorith_recu(d, something):
+    global allow_1
 
-def Algorith_recu(d):
-    #id = ["z", "x", "y"]
-    #len_of_lid = len(lid)
-    #print(len_of_lid)
-    #d = lid.pop(-1)
-
-    if d > 0:
+    if d > 1:
         a = "hello"
         b = "bye"
         c = "ciao"
 
-        allow = [a, b, c]
         pick_let = random.randrange(0,4)
 
         if pick_let == 0:
-            print(a)
+            print("hello my friend")
             input("press")
-            allow.remove(a)
-            Algorith_recu(d-1)
+            print("You have removed", a)
+            Algorith_recu(d-1, allow_1.remove(a))
         
 
         elif pick_let == 1:
-            print(b)
+            print("Good bye my friend")
             input("press")
-            allow.remove(b)
-            Algorith_recu(d-1)
+            print("You have", b)
+            Algorith_recu(d-1, allow_1.remove(b))
 
         elif pick_let == 2:
-            print(c)
+            print("Ciao caro meo")
             input("press")
-            allow.remove(c)
-            Algorith_recu(d-1)
+            print("You have removed ", c)
+            Algorith_recu(d-1, allow_1.remove(c))
 
     else:
-        print("Exiiiiit")
+        print("Exit now ")
         exit()
 
 
-Algorith_recu(3)
+Algorith_recu(4, allow_1)
